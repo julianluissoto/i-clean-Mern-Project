@@ -8,7 +8,7 @@ function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
   return (
-    <div className="bg-violet-300">
+    <div className=" mt-10 flex justify-center items-center">
       {isAuthenticated ? (
         <>
           <Home />
@@ -16,7 +16,9 @@ function App() {
           <LogOutButton />
         </>
       ) : (
-        <LoginButton />
+        <div className=" flex justify-center  w-1/2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <LoginButton />
+        </div>
       )}
     </div>
   );
