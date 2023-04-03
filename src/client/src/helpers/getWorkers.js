@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export const getWorkers = async () => {
-  const worker = await axios.get("http://localhost:3002/api/worker");
+  const worker = await axios.get(
+    "https://i-clean.up.railway.app/api/worker" ||
+      "http://localhost:3002/api/worker"
+  );
   const datosApi = worker.data;
 
   const workerDatabase = datosApi.map((w) => ({

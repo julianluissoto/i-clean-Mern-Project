@@ -6,7 +6,7 @@ import "./index.css";
 import { Home } from "./Components/Home";
 function App() {
   const { user, isAuthenticated, isLoading } = useAuth0();
-  console.log(user?.email, user?.name);
+
   return (
     <div className="bg-violet-300">
       {isAuthenticated ? (

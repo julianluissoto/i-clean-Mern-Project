@@ -12,7 +12,6 @@ router.get("/", async (req, res) => {
 
     res.json(dataBaseResponse);
   } catch (error) {
-    console.log(error);
     res.json({ msg: "error", error });
   }
 });
@@ -36,7 +35,7 @@ router.get("/:id", async (req, res) => {
   const { id } = req.params;
 
   const dataBaseResponse = await Worker.findById(id);
-  console.log(dataBaseResponse);
+
   res.json(dataBaseResponse);
 });
 
