@@ -1,17 +1,19 @@
-export const getWorkers = async () => {
-  const url = `http://localhost:3001/api/worker`;
-  const resp = await fetch(url);
-  const dataWorkers = await resp.json();
+import axios from "axios";
 
-  const workers = dataWorkers.map((worker) => ({
-    id: worker._id,
-    name: worker.name,
-    lastName: worker.lastName,
-    address: worker.address,
-    qualification: worker.qualification,
-    image: worker.image,
-    skills: worker.skills,
+export const getWorkers = async () => {
+  const worker = await axios.get("http://localhost:3002/api/worker");
+  const datosApi = worker.data;
+
+  const workerDatabase = datosApi.map((w) => ({
+    id: w._id,
+    name: w.name,
+    lastName: w.lastName,
+    address: w.address,
+    qualification: w.qualification,
+    skills: w.skills,
+    image: w.image,
+    clientReview: w.clientReview,
   }));
 
-  return workers;
+  return workerDatabase;
 };

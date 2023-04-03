@@ -6,10 +6,10 @@ const cors = require("cors");
 const { mongoose } = require("./database");
 
 //settings
-app.set("port", process.env.PORT || 3001);
-//CORS
+
+app.set("port", process.env.PORT || 3002);
 app.use(cors());
-let whiteList = ["http://localhost:5173"];
+
 //middlewares
 app.use(morgan("dev")); //show on the console the request and response to the backend
 app.use(express.json());

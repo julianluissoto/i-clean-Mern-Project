@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const cleanerSchema = mongoose.Schema({
+  auth0ID: String,
   name: String,
   lastName: String,
   address: String,
@@ -10,6 +11,10 @@ const cleanerSchema = mongoose.Schema({
     required: false,
   },
   skills: String,
+  clientReview: {
+    type: String,
+    require: false,
+  },
 });
 
 const worker = mongoose.model("worker", cleanerSchema);
