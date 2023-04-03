@@ -10,7 +10,11 @@ export const Home = () => {
         <h1 className="text-center text-sky-950">
           BIENVENIDO {name.toUpperCase()} A
         </h1>
-        <img src="https://imageup.me/u8f" alt="logo-gif" />
+        <img
+          className="w-12"
+          src="https://imgtr.ee/images/2023/04/02/UuUgc.gif"
+          alt="logo-gif"
+        />
       </div>
 
       <h1 className="flex direction justify-center text-2xl">I-CLEAN</h1>
